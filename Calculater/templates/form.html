@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>Login</title>
+    </head>
+    <body>
+        <h1>Form </h1>
+        <div class="container mt-5">
+            <form method = "post">
+                {% csrf_token %}
+              <div class="form-group">
+                <label for="number1">Enter Number 1:</label>
+                <input type="number" class="form-control" name="number1" placeholder="Enter number 1" required>
+              </div>
+              <label for="operation">Select Operation:</label>
+      <select class="form-control" name="operation">
+        <option value="+">Addition (+)</option>
+        <option value="-">Subtraction (-)</option>
+        <option value="*">Division (*)</option>
+        <option value="/">Division (/)</option>
+      </select>
+              <div class="form-group">
+                <label for="number2">Enter Number 2:</label>
+                <input type="number" class="form-control" name="number2" placeholder="Enter number 2" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Calculate</button>
+            </form>
+            <div name="result">
+                {{ result }}
+            </div>
+    </body>
+</html>
